@@ -4,5 +4,6 @@ class Solution {
         val n1: Int = n / 10
         answer = n*12000 + (k-n1)*2000
         return answer
+
     }
 }
