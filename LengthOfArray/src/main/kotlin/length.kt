@@ -5,5 +5,6 @@ class Solution {
             answer += strlist[i].length
         }
         return answer
+
     }
 }
