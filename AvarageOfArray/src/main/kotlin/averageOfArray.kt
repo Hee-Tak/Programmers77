@@ -8,5 +8,6 @@ class Solution {
         }
         answer = (sum.toDouble()) / (size1.toDouble())
         return answer
+
     }
 }
