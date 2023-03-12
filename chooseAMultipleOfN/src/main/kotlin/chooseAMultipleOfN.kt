@@ -10,3 +10,16 @@ class Solution {
         return answer
     }
 }
+
+
+class Solution {
+    fun solution(n: Int, numlist: IntArray): IntArray {
+        val answerList = arrayListOf<Int>()
+        for (i in numlist) {
+            if (i % n == 0) {
+                answerList.add(i)
+            }
+        }
+        return answerList.toIntArray()
+    }
+}
