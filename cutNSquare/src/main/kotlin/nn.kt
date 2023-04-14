@@ -24,3 +24,14 @@ class Solution {
     }
 }//=====================================위 코드는 아직 미완성 상태.
 
+class Solution {
+    fun solution(n: Int, left: Long, right: Long): IntArray {
+        val answer = IntArray(right - left + 1)
+        var index = 0
+        for (i in left..right) {
+            val value = Math.max(i / n, i % n) + 1
+            answer[index++] = value
+        }
+        return answer
+    }
+}//===========반은 맞고 반은 틀림
