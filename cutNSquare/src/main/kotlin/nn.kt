@@ -50,6 +50,8 @@ class Solution {
     }
 }//==============이거도 안돼?
 
+
+
 class Solution {
     fun solution(n: Int, left: Long, right: Long): IntArray {
         val answer = IntArray((right - left + 1).toInt()) { i ->
