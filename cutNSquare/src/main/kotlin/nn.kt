@@ -35,6 +35,8 @@ class Solution {
         return answer
     }
 }//===========반은 맞고 반은 틀림
+
+
 class Solution {
     fun solution(n: Int, left: Long, right: Long): IntArray {
         val left_ = left.toInt()
@@ -42,6 +44,8 @@ class Solution {
         return IntArray(right_-left_+1){ i -> Math.max(((i+left_)/n)1, ((i+left_)%n)+1)}
     }
 }//==============얘도 마찬가지
+
+
 class Solution {
     fun solution(n: Int, left: Long, right: Long): IntArray {
         val left_ = left.toInt()
