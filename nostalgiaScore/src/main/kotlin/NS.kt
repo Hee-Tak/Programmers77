@@ -14,6 +14,7 @@ class Solution {
             }
             answer += sum
         }
+
         return answer
     }
 }
