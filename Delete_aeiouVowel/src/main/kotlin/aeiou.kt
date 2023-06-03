@@ -12,3 +12,12 @@ class Solution {
 }
 
 //===================================================
+
+class Solution {
+    fun solution(my_string: String): String {
+        var answer: String = ""
+        val replaced = my_string.replace(Regex("a|e|i|o|u"), "")
+        answer = replaced
+        return answer
+    }
+}
