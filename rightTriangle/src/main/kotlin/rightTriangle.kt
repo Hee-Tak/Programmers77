@@ -1,12 +1,14 @@
 fun main(args: Array<String>) {
     val (n) = readLine()!!.split(' ').map(String::toInt)
     //println(n)
+
     for(k in 1..n){
         for(s in 1..k){
             print("*")
         }
         println()
     }
+
 }
 
 /**
