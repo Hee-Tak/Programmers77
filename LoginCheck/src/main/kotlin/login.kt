@@ -30,3 +30,12 @@ class Solution {
  * https://school.programmers.co.kr/learn/courses/30/lessons/120883
  *
  */
+
+/**
+ *
+ * 근데 여기서 클린 코딩? 좀 더 깔끔한 구조로 정리해서 생각하자면.
+ *
+ * 일단 db 크기가 매우 클 경우에 위 경우처럼
+ * for문으로 전체를 순회하면서 찾는것은 매우 비 효율적
+ *
+ */
