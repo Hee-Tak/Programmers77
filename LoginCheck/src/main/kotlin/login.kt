@@ -39,3 +39,35 @@ class Solution {
  * for문으로 전체를 순회하면서 찾는것은 매우 비 효율적
  *
  */
+
+
+class Solution {
+    fun solution(id_pw: Array<String>, db: Array<Array<String>>): String {
+        //HashMap
+        val userMap = HashMap<String, String>()
+        for(person in db){
+            val id = person[0]
+            val pw = person[1]
+            userMap[id] = pw
+        }
+
+        val id = id_pw[0]
+        val pw = id_pw[1]
+
+        return when {
+            userMap.containsKey(id) -> {
+                if(userMap[id] == pw){
+                    "login"
+                } else {
+                    "wrong pw"
+                }
+            }
+            else -> "fail"
+        }
+    }
+}
+
+/**
+ * HashMap 을 활용하는 경우
+ * 시간복잡도가 O(1) 이 되며 매우 효율적이게 됨
+ */
