@@ -1,44 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//=============================================================================
-
-
-
 import java.util.LinkedList
 import java.util.Queue
 
@@ -91,9 +52,96 @@ private class Graph(val n: Int) {
         return Pair(totalSheep, totalWolf)
     }
 }
+//이거는 주어진 예제하에서는 돌아가긴하나
+//아무래도 totalSheep += info[curr]
+//            totalWolf += 1 - info[curr]  이 부분처럼 이해가 안되는부분(문제와 어긋나는부분)이 존재하기때문에 틀린풀이
+//=========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=============================================================================
+
+
+class Solution {
+    fun solution(info: IntArray, edges: Array<IntArray>): Int {
+        val n = info.size
+        val graph = Graph(n)
+
+        for (edge in edges) {
+            graph.addEdge(edge[0], edge[1])
+        }
+
+        val (totalSheep, totalWolf) = graph.bfs(0, info)
+
+        return Math.min(totalSheep, totalWolf)
+    }
+}
+
+private class Graph(val n: Int) {
+    val adjList: Array<MutableList<Int>> = Array(n) { mutableListOf() }
+
+    fun addEdge(u: Int, v: Int) {
+        adjList[u].add(v)
+        adjList[v].add(u)
+    }
+
+    fun bfs(start: Int, info: IntArray): Pair<Int, Int> {
+        val visited = BooleanArray(n) { false }
+        val queue: Queue<Int> = LinkedList()
+        queue.offer(start)
+        visited[start] = true
+
+        var totalSheep = 0
+        var totalWolf = 0
+
+        while (queue.isNotEmpty()) {
+            val curr = queue.poll()
+
+            totalSheep += info[curr]
+            totalWolf += 1 - info[curr]
+
+            for (next in adjList[curr]) {
+                if (!visited[next]) {
+                    visited[next] = true
+                    queue.offer(next)
+                }
+            }
+        }
+
+        return Pair(totalSheep, totalWolf)
+    }
+}
 //======================================================================
-import java.util.LinkedList
-import java.util.Queue
 
 class Solution {
     fun solution(info: IntArray, edges: Array<IntArray>): Int {
@@ -155,4 +203,8 @@ private class Graph(val n: Int) {
 /**
  * 위에 두개는 막힌상태인데, 아무래도 bfs말고 dfs를 써야하는듯함. 일단 이따가 마지막으로 bfs 테스트해보고
  * dfs로 넘어갈 예정
+ *
+ *
+ *
+ * => BFS로 테스트 끝. 공부는 꽤 도움되었으나 해결이 되지않아 DFS로 넘어갈것임.
  */
