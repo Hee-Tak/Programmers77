@@ -1,7 +1,6 @@
 class Solution {
     fun solution(numLog: IntArray): String {
         var answer: String = ""
-
         for(i in 0 until numLog.size-1){
             val d = numLog[i+1] - numLog[i]
             when(d) {
@@ -11,7 +10,6 @@ class Solution {
                 -10 -> answer += "a"
             }
         }
-
         return answer
     }
 }
