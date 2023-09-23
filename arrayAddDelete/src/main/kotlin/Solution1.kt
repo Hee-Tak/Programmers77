@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     fun solution(arr: IntArray, flag: BooleanArray): IntArray {
         var answer: IntArray = intArrayOf()
         val mutableList = mutableListOf<Int>()
