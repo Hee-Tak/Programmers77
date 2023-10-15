@@ -8,6 +8,7 @@ class Solution {
             }
             if(answer.size >= k) break
         }
+
         if(answer.size < k){
             for(i in 0 until k-answer.size){
                 answer += -1
