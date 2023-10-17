@@ -7,7 +7,6 @@ class Solution {
             if(temp1 > k){
                 answer += temp1
             }
-
         }
 
         return answer
