@@ -1,5 +1,7 @@
 class Solution {
+    fun solution(){
 
+    }
 }
 
 /**
